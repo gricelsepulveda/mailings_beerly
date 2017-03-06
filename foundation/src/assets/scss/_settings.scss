@@ -1,0 +1,534 @@
+//  Foundation for Emails Settings
+//  ------------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Grid
+//   3. Block Grid
+//   4. Typography
+//   5. Button
+//   6. Callout
+//   7. Menu
+//   8. Thumbnail
+
+
+// 1. Global
+// ---------
+
+$primary-color: #FFD600; // AMARILLO 
+$secondary-color: #F76F05; // NARANJO
+$success-color: #8D5103; // CAFÉ
+$warning-color: #F0F0C0; // WATER GREEN
+$alert-color: #F0A800; // MUSTARD
+$light-gray: #f3f3f3;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #2D2D2D; // NEGRO
+$white: #fefefe; // BLANCO
+$pre-color: #ff6908;
+$global-width: 580px;
+$global-width-small: 95%;
+$global-gutter: 16px;
+$body-background: $light-gray;
+$container-background: $white;
+$global-padding: 16px;
+$global-margin: 16px;
+$global-radius: 3px;
+$global-rounded: 500px;
+$global-breakpoint: $global-width + $global-gutter;
+
+// 2. Grid
+// -------
+
+$grid-column-count: 12;
+$column-padding-bottom: $global-padding;
+$container-radius: 0;
+
+// 3. Block Grid
+// -------------
+
+$block-grid-max: 8;
+$block-grid-gutter: $global-gutter;
+
+// 4. Typography
+// -------------
+
+$global-font-color: $black;
+$body-font-family: Helvetica, Arial, sans-serif;
+$global-font-weight: normal;
+$header-color: inherit;
+$global-line-height: 1.3;
+$global-font-size: 16px;
+$body-line-height: $global-line-height;
+$header-font-family: $body-font-family;
+$header-font-weight: $global-font-weight;
+$h1-font-size: 34px;
+$h2-font-size: 30px;
+$h3-font-size: 28px;
+$h4-font-size: 24px;
+$h5-font-size: 20px;
+$h6-font-size: 18px;
+$header-margin-bottom: 10px;
+$paragraph-margin-bottom: 10px;
+$small-font-size: 80%;
+$small-font-color: $medium-gray;
+$lead-font-size: $global-font-size * 1.25;
+$lead-line-height: 1.6;
+$text-padding: 10px;
+$subheader-lineheight: 1.4;
+$subheader-color: $dark-gray;
+$subheader-font-weight: $global-font-weight;
+$subheader-margin-top: 4px;
+$subheader-margin-bottom: 8px;
+$hr-width: $global-width;
+$hr-border: 1px solid $black;
+$hr-margin: 20px auto;
+$anchor-text-decoration: none;
+$anchor-color: $primary-color;
+$anchor-color-visited: $anchor-color;
+$anchor-color-hover: darken($primary-color, 10%);
+$anchor-color-active: $anchor-color-hover;
+$stat-font-size: 40px;
+
+// 5. Button
+// ---------
+
+$button-padding: (
+  tiny: 4px 8px 4px 8px,
+  small: 5px 10px 5px 10px,
+  default: 8px 16px 8px 16px,
+  large: 10px 20px 10px 20px,
+);
+$button-font-size: (
+  tiny: 10px,
+  small: 12px,
+  default: 16px,
+  large: 20px,
+);
+$button-color: $white;
+$button-color-alt: $medium-gray;
+$button-font-weight: bold;
+$button-margin: 0 0 $global-margin 0;
+$button-background: $primary-color;
+$button-border: 2px solid $button-background;
+$button-radius: $global-radius;
+$button-rounded: $global-rounded;
+
+// 6. Callout
+// ----------
+
+$callout-background: $white;
+$callout-background-fade: 85%;
+$callout-padding: 10px;
+$callout-margin-bottom: $global-margin;
+$callout-border: 1px solid darken($callout-background, 20%);
+$callout-border-secondary: 1px solid darken($secondary-color, 20%);
+$callout-border-success: 1px solid darken($success-color, 20%);
+$callout-border-warning: 1px solid darken($warning-color, 20%);
+$callout-border-alert: 1px solid darken($alert-color, 20%);
+
+// 7. Menu
+// -------
+
+$menu-item-padding: 10px;
+$menu-item-gutter: 10px;
+$menu-item-color: $primary-color;
+
+// 8. Thumbnail
+// ------------
+
+$thumbnail-border: solid 4px $white;
+$thumbnail-margin-bottom: $global-margin;
+$thumbnail-shadow: 0 0 0 1px rgba($black, 0.2);
+$thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
+$thumbnail-transition: box-shadow 200ms ease-out;
+$thumbnail-radius: $global-radius;
+
+// OWN STYLES
+
+//BREAKPOINTS GRALES
+$xs: "(max-width: 599px)";
+
+.horizontal_startline
+{
+  height: auto;
+  span
+  {
+    margin-top: 10px;
+    display: block;
+    color: $warning-color;
+    font:
+    {
+      size: 12px;
+      family: 'Trebuchet MS', sans-serif;
+      style: normal;
+      weight: normal;
+    }
+    text:
+    {
+      align: left;
+    }
+    @media #{$xs}
+    {
+      text-align: center;
+    }
+  }
+  .right
+  {
+    text:
+    {
+      align: right;
+    }
+    @media #{$xs}
+    {
+      text-align: center;
+      margin-top: 0;
+    }
+  }
+  a 
+  {
+    color: $white;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 5px;
+    &:hover
+    {
+      color: $warning-color;
+    }
+  }
+}
+
+@mixin hyper
+{
+  word-break: break-word;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+}
+
+.head_row
+{
+  background-color: $secondary-color;
+  h1 
+  {
+    @include hyper;
+    display: block;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 20px;
+      weight: bolder;
+      style: normal;
+    }
+    text:
+    {
+      align: center;
+    }
+    color: $white;
+  }
+  h2
+  {
+    @include hyper;
+    display: block;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 30px;
+      weight: bolder;
+      style: normal;
+    }
+    line-height: 30px;
+    text:
+    {
+      align: center;
+    }
+    color: $black;
+    span 
+    {
+      color: $warning-color;
+      text-transform: uppercase;
+      font-weight: normal!important;
+    }
+  }
+  h3
+  {
+  	color: $white;
+    text-align: center;
+    display: block;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 14px;
+      weight: normal;
+      style: normal;
+    }
+    line-height: 16px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  span.promotion_note
+  {
+    background-color: $alert-color;
+    padding: 5px 10px 5px 10px;
+    @include hyper;
+    color: $black;
+    display: block;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 12px;
+      weight: normal;
+      style: normal;
+    }
+    margin-top: -10px;
+    text:
+    {
+      align: center;
+    }
+  }
+  p.note_promotion
+  {
+    padding-top: 10px;
+    margin-bottom: -5px;
+    @include hyper;
+    color: $black;
+    display: block;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 10px;
+      weight: normal;
+      style: normal;
+    }
+    text:
+    {
+      align: center;
+    }
+  }
+  a.button_converter
+  {
+    display: inline-block;
+    border-radius: 50px;
+    color: $success-color;
+    background-color: $primary-color;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 20px;
+      weight: bolder;
+      style: normal;
+    }
+    cursor: pointer;
+    max-width: 200px;
+    &:hover 
+    {
+      background-color: $white;
+    }
+  }
+  .pricing_converter
+  {
+    color: $black;
+    display: block;
+    text-align: center;
+    font:
+    {
+      family: 'Arial Black', sans-serif;
+      size: 96px;
+      weight: bolder;
+      style: normal;
+    }
+    @media #{$xs}
+    {
+      font-size: 48px!important;
+    }
+  }
+}
+
+.bg_party
+{
+  background-image: url("https://tucerveza.s3.amazonaws.com/mails/promo_march_2017/bg_party.png");
+  background:
+  {
+    size: cover;
+    position: bottom;
+    repeat: no-repeat;
+  }
+}
+
+.kitbeerly_row
+{
+  background-color: $warning-color;
+  h4 
+  {
+    @include hyper;
+    color: $black;
+    text-align: center;
+    display: block;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 26px;
+      weight: bolder;
+      style: normal;
+    }
+  }
+  a.button_converter
+  {
+    display: inline-block;
+    border-radius: 50px;
+    color: $success-color;
+    background-color: $primary-color;
+    padding: 10px 20px 10px 20px;
+    max-width: 200px;
+    text-align: center;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 24px;
+      weight: bolder;
+      style: normal;
+    }
+    cursor: pointer;
+    &:hover 
+    {
+      background-color: $white;
+    }
+  }
+}
+
+.cata_row
+{
+  background-color: $black;
+}
+
+.section_cata
+{
+  text-align: center;
+  background-image: url("https://tucerveza.s3.amazonaws.com/mails/promo_march_2017/cata.jpg");
+  background:
+  {
+    size: cover;
+    position: bottom;
+    repeat: no-repeat;
+  }
+  h5 
+  {
+    @include hyper;
+    color: $white;
+    text-align: center;
+    display: block;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 24px;
+      weight: normal;
+      style: normal;
+    }
+    span 
+    {
+      font-weight: bolder!important;
+    }
+  }
+  .kit_p 
+  {
+    @include hyper;
+    color: $white;
+    text-align: justify;
+    display: block;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 12px;
+      weight: normal;
+      style: normal;
+    }
+    @media #{$xs}
+    {
+      font-size: 14px;
+    }
+  }
+  h3
+  {
+    @include hyper;
+    color: $white;
+    text-align: center;
+    display: block;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 12px;
+      weight: normal;
+      style: normal;
+    }
+    @media #{$xs}
+    {
+      font-size: 16px;
+    }
+  }
+  a.button_converter
+  {
+    display: inline-block;
+    border-radius: 50px;
+    color: $success-color;
+    background-color: $primary-color;
+    padding: 10px 20px 10px 20px;
+    max-width: 200px;
+    text-align: center;
+    font:
+    {
+      family: 'Trebuchet MS', sans-serif;
+      size: 24px;
+      weight: bolder;
+      style: normal;
+    }
+    cursor: pointer;
+    &:hover 
+    {
+      background-color: $white;
+    }
+  }
+}
+
+img.beerly_logo
+{
+  display: block;
+  width: 150px!important;
+  height: auto;
+  text-align: center;
+  position: relative;
+}
+
+.footer
+{
+  img 
+  {
+    width: 50px;
+    @media #{$xs}
+    {
+      width: auto;
+    }
+  }
+}
+
+.siguenos
+{
+  @include hyper;
+  color: $white;
+  text-align: center;
+  display: block;
+  font:
+  {
+    family: 'Trebuchet MS', sans-serif;
+    size: 16px;
+    weight: normal;
+    style: normal;
+  }
+  margin-bottom: -10px;
+  @media #{$xs}
+  {
+    font-size: 18px;
+  }
+}
